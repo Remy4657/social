@@ -15,7 +15,7 @@ type FeedPostType = PostType & { user: User } & {
 const Post = ({ post }: { post: FeedPostType }) => {
   const { userId } = auth();
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 bg-white p-4 rounded-lg">
       {/* USER */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">

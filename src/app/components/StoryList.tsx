@@ -51,7 +51,7 @@ const StoryList = ({
     try {
       const createdStory = await addStory(img.secure_url);
       setStoryList((prev) => [createdStory!, ...prev]);
-      setImg(null)
+      setImg(null);
     } catch (err) {}
   };
 
@@ -61,7 +61,7 @@ const StoryList = ({
   );
   return (
     <>
-      <CldUploadWidget
+      {/* <CldUploadWidget
         uploadPreset="social"
         onSuccess={(result, { widget }) => {
           setImg(result.info);
@@ -92,7 +92,7 @@ const StoryList = ({
             </div>
           );
         }}
-      </CldUploadWidget>
+      </CldUploadWidget> */}
       {/* STORY */}
       {optimisticStories.map((story) => (
         <div

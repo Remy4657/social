@@ -30,7 +30,10 @@ const AddPost = () => {
       {/* POST */}
       <div className="flex-1">
         {/* TEXT INPUT */}
-        <form action={(formData)=>addPost(formData,img?.secure_url || "")} className="flex gap-4">
+        <form
+          action={(formData) => addPost(formData, img?.secure_url || "")}
+          className="flex gap-4"
+        >
           <textarea
             placeholder="What's on your mind?"
             className="flex-1 bg-slate-100 rounded-lg p-2"
@@ -50,7 +53,7 @@ const AddPost = () => {
         </form>
         {/* POST OPTIONS */}
         <div className="flex items-center gap-4 mt-4 text-gray-400 flex-wrap">
-          <CldUploadWidget
+          {/* <CldUploadWidget
             uploadPreset="social"
             onSuccess={(result, { widget }) => {
               setImg(result.info);
@@ -68,7 +71,7 @@ const AddPost = () => {
                 </div>
               );
             }}
-          </CldUploadWidget>
+          </CldUploadWidget> */}
           <div className="flex items-center gap-2 cursor-pointer">
             <Image src="/addVideo.png" alt="" width={20} height={20} />
             Video

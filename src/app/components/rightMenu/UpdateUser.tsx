@@ -12,7 +12,10 @@ const UpdateUser = ({ user }: { user: User }) => {
   const [open, setOpen] = useState(false);
   const [cover, setCover] = useState<any>(false);
 
-  const [state, formAction] = useActionState(updateProfile,{success:false,error:false});
+  const [state, formAction] = useActionState(updateProfile, {
+    success: false,
+    error: false,
+  });
 
   const router = useRouter();
 
@@ -43,7 +46,7 @@ const UpdateUser = ({ user }: { user: User }) => {
               Use the navbar profile to change the avatar or username.
             </div>
             {/* COVER PIC UPLOAD */}
-            <CldUploadWidget
+            {/* <CldUploadWidget
               uploadPreset="social"
               onSuccess={(result) => setCover(result.info)}
             >
@@ -69,7 +72,7 @@ const UpdateUser = ({ user }: { user: User }) => {
                   </div>
                 );
               }}
-            </CldUploadWidget>
+            </CldUploadWidget> */}
 
             {/* WRAPPER */}
             <div className="flex flex-wrap justify-between gap-2 xl:gap-4">
@@ -160,7 +163,7 @@ const UpdateUser = ({ user }: { user: User }) => {
                 />
               </div>
             </div>
-            <UpdateButton/>
+            <UpdateButton />
             {state.success && (
               <span className="text-green-500">Profile has been updated!</span>
             )}
