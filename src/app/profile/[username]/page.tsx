@@ -23,8 +23,6 @@ const ProfilePage = async ({ params }: { params: { username: string } }) => {
       },
     },
   });
-  // console.log("user: ", user);
-  // console.log("username: ", username);
 
   if (!user) return notFound();
   const { userId } = auth();

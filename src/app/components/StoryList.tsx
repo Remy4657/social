@@ -50,6 +50,7 @@ const StoryList = ({
 
     try {
       const createdStory = await addStory(img.secure_url);
+      // add new createdStory in head of prev arr
       setStoryList((prev) => [createdStory!, ...prev]);
       setImg(null);
     } catch (err) {}
@@ -59,9 +60,10 @@ const StoryList = ({
     storyList,
     (state, value: StoryWithUser) => [value, ...state]
   );
+  console.log("[story list] optimisticStories: ", optimisticStories);
   return (
     <>
-      {/* <CldUploadWidget
+      <CldUploadWidget
         uploadPreset="social"
         onSuccess={(result, { widget }) => {
           setImg(result.info);
@@ -92,7 +94,7 @@ const StoryList = ({
             </div>
           );
         }}
-      </CldUploadWidget> */}
+      </CldUploadWidget>
       {/* STORY */}
       {optimisticStories.map((story) => (
         <div
@@ -100,7 +102,7 @@ const StoryList = ({
           key={story.id}
         >
           <Image
-            src={story.user.avatar || "/noAvatar.png"}
+            src={story.img || "/noAvatar.png"}
             alt=""
             width={80}
             height={80}

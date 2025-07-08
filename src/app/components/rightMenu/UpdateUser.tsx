@@ -46,9 +46,13 @@ const UpdateUser = ({ user }: { user: User }) => {
               Use the navbar profile to change the avatar or username.
             </div>
             {/* COVER PIC UPLOAD */}
-            {/* <CldUploadWidget
+            <CldUploadWidget
               uploadPreset="social"
-              onSuccess={(result) => setCover(result.info)}
+              onSuccess={(result) => {
+                console.log("result: ", result);
+                setCover(result.info);
+              }}
+              onError={(err) => console.log("err: ", err)}
             >
               {({ open }) => {
                 return (
@@ -72,7 +76,7 @@ const UpdateUser = ({ user }: { user: User }) => {
                   </div>
                 );
               }}
-            </CldUploadWidget> */}
+            </CldUploadWidget>
 
             {/* WRAPPER */}
             <div className="flex flex-wrap justify-between gap-2 xl:gap-4">
